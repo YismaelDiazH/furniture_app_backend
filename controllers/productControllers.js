@@ -1,3 +1,4 @@
+//productControllers.js
 const Product = require('../models/Products')
 
 module.exports = {
@@ -16,7 +17,7 @@ module.exports = {
     }
   },
 
-  getAllProducts: async (red, res) => {
+  getAllProducts: async (req, res) => {
     try {
       const products = await Product.find().sort({ createdAt: -1 })
       res.status(200).json(products)
